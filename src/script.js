@@ -3,6 +3,7 @@ let precoBase = 0;
 
 let moldura = null;
 let adicionais = null;
+let precoFinal = 0;
 
 // Seleção de tamanho (com opção de desmarcar)
 document.querySelectorAll(".size-btn").forEach(btn => {
@@ -63,7 +64,7 @@ document.getElementById("calcular").addEventListener("click", function() {
         return;
     }
 
-    let precoFinal = precoBase;
+    precoFinal = precoBase;
 
     // Moldura
     if (moldura) {
@@ -80,4 +81,19 @@ document.getElementById("calcular").addEventListener("click", function() {
          Moldura: <strong>${moldura ? "Sim" : "Não"}</strong><br>
          Adicionais: <strong>${adicionais ? "Sim" : "Não"}</strong><br>
          Orçamento: <strong>R$ ${precoFinal.toFixed(2)}</strong> + Taxa de entrega variável`;
+
+    // Mostrar botão WhatsApp
+    document.getElementById("enviarWhatsApp").style.display = "block";
+});
+
+// Clique no botão de enviar para WhatsApp
+document.getElementById("enviarWhatsApp").addEventListener("click", function() {
+    let mensagem = `Olá, Flávia. Tudo bem? Tenho interesse em contratar o seu serviço. Gostaria de encomendar uma arte com as seguintes especificações:\n\n` +
+                   `📏 Tamanho: ${tamanhoSelecionado}\n` +
+                   `🖼️ Moldura: ${moldura ? "Sim" : "Não"}\n` +
+                   `➕ Adicionais: ${adicionais ? "Sim" : "Não"}\n` +
+                   `💰 Orçamento: R$ ${precoFinal.toFixed(2)} + Taxa de entrega variável`;
+
+    let url = "https://wa.me/5574988028048?text=" + encodeURIComponent(mensagem);
+    window.open(url, "_blank");
 });
