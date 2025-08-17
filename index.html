@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia Menezes - Orçamento de Pinturas</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="src\style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="src\favicon.ico" type="image/x-icon">
+    <!-- Se for PNG -->
+    <!-- <link rel="icon" href="img/favicon.png" type="image/png"> -->
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <img src="src\Logo.png" alt="Flávia Menezes" class="logo">
+        <p>Orçamentos para quadros artísticos</p>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Monte seu orçamento</h2>
+
+            <!-- Escolha do tamanho -->
+            <div class="input-group">
+                <label>Tamanho do quadro:</label>
+                <div class="size-buttons">
+                    <button type="button" class="size-btn" data-size="A3">A3 - R$ 200</button>
+                    <button type="button" class="size-btn" data-size="A4">A4 - R$ 150</button>
+                </div>
+            </div>
+
+            <!-- Moldura -->
+            <div class="input-group">
+                <label>Moldura:</label>
+                <div class="option-buttons">
+                    <button type="button" class="option-btn" data-option="moldura-sim">🖼️ Com Moldura</button>
+                    <button type="button" class="option-btn" data-option="moldura-nao">❌ Sem Moldura</button>
+                </div>
+            </div>
+
+            <!-- Adicionais -->
+            <div class="input-group">
+                <label>Elementos adicionais:</label>
+                <div class="option-buttons">
+                    <button type="button" class="option-btn" data-option="adicional-sim">➕ Com Adicionais</button>
+                    <button type="button" class="option-btn" data-option="adicional-nao">➖ Sem Adicionais</button>
+                </div>
+            </div>
+
+            <!-- Botão calcular -->
+            <button id="calcular">Calcular Orçamento</button>
+
+            <div id="resultado" class="resultado"></div>
+        </section>
+
+        <p class="aviso">
+            Caso tenha interesse em encomendar uma arte, entre em contato comigo em:
+            <a href="https://wa.me/5574988028048" target="_blank">
+                <strong>(74) 9 8802 - 8048</strong>
+            </a>
+        </p>
+
+        <p class="aviso">Flávia Menezes ©</p>
+    </main>
+
+    <!-- JS -->
+    <script src="src\script.js"></script>
+</body>
+</html>
