@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+    background: #F2F1ED; /* Warm Sand */
+    color: #161616; /* Obsidian Black */
+}
+
+header {
+    background: #710014; /* Crimson Depth fixo */
+    color: #F2F1ED; /* Soft Pearl */
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 1px;
+}
+
+header .logo {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+main {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #F2F1ED;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #710014;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin: 15px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    letter-spacing: 0.5px;
+}
+
+/* Botões de tamanho */
+.size-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.size-btn {
+    flex: 1;
+    background: #710014;
+    color: #F2F1ED;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.size-btn:hover {
+    background: #161616;
+}
+
+.size-btn.selected {
+    background: #161616;
+}
+
+/* Botões de opções (moldura e adicionais) */
+.option-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.option-btn {
+    flex: 1;
+    background: #710014;
+    color: #F2F1ED;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.option-btn:hover {
+    background: #161616;
+}
+
+.option-btn.selected {
+    background: #161616;
+}
+
+/* Botão calcular */
+#calcular {
+    background: #710014;
+    color: #F2F1ED;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', serif;
+    letter-spacing: 0.5px;
+}
+
+#calcular:hover {
+    background: #161616;
+}
+
+/* Botão WhatsApp (mesmo tom de vermelho) */
+#enviarWhatsApp {
+    background: #710014; /* Mesmo vermelho dos outros */
+    color: #F2F1ED;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    padding: 12px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#enviarWhatsApp:hover {
+    background: #161616; /* Mesmo hover dos outros */
+}
+
+.resultado {
+    margin-top: 15px;
+    padding: 10px;
+    background: #F2F1ED;
+    border: 1px solid #710014;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #161616;
+    letter-spacing: 0.5px;
+}
+
+.aviso {
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    color: #161616;
+    letter-spacing: 0.5px;
+}
+
+.aviso a {
+    color: #710014; /* Crimson Depth */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.aviso a:hover {
+    text-decoration: underline;
+}
