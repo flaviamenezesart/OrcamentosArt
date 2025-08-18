@@ -7,14 +7,17 @@ body {
     padding: 0;
     background: #F2F1ED; /* Warm Sand */
     color: #161616; /* Obsidian Black */
+    transition: all 0.3s ease;
 }
 
+/* ====== HEADER ====== */
 header {
     background: #710014; /* Crimson Depth fixo */
     color: #F2F1ED; /* Soft Pearl */
     text-align: center;
     padding: 20px;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 header .logo {
@@ -25,6 +28,41 @@ header .logo {
     margin: 0 auto 10px;
 }
 
+/* Texto com gradiente animado */
+.gradient-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(270deg, #F2F1ED, #FFD6D6, #F2F1ED);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ====== FADE IN ====== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== MAIN ====== */
 main {
     max-width: 500px;
     margin: 20px auto;
@@ -32,118 +70,101 @@ main {
     background: #F2F1ED;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
 h2 {
     text-align: center;
     color: #710014;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 .input-group {
     margin: 15px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
 }
+.input-group:nth-child(1) { animation-delay: 0.2s; }
+.input-group:nth-child(2) { animation-delay: 0.4s; }
+.input-group:nth-child(3) { animation-delay: 0.6s; }
+.input-group:nth-child(4) { animation-delay: 0.8s; }
 
 label {
     font-weight: bold;
 }
 
-select, button {
+select, button, input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-/* Botões de tamanho */
-.size-buttons {
-    display: flex;
-    gap: 10px;
+/* ====== INPUT FOCUS ====== */
+select:focus, input:focus {
+    border-color: #710014;
+    box-shadow: 0 0 8px rgba(113,0,20,0.3);
+    outline: none;
 }
 
-.size-btn {
-    flex: 1;
-    background: #710014;
-    color: #F2F1ED;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.5px;
+/* ====== HOVER EM INPUTS/SELECTS ====== */
+select:hover, input:hover {
+    border-color: #710014;
 }
 
-.size-btn:hover {
-    background: #161616;
-}
-
-.size-btn.selected {
-    background: #161616;
-}
-
-/* Botões de opções (moldura e adicionais) */
+/* ====== BOTÕES ====== */
+.size-buttons,
 .option-buttons {
     display: flex;
     gap: 10px;
-    margin-top: 5px;
 }
 
-.option-btn {
-    flex: 1;
+.size-btn, .option-btn, #calcular, #enviarWhatsApp {
     background: #710014;
     color: #F2F1ED;
     border: none;
-    padding: 12px;
     cursor: pointer;
-    transition: background 0.3s;
-    border-radius: 5px;
+    transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.5px;
 }
 
-.option-btn:hover {
-    background: #161616;
+/* Hover criativo */
+.size-btn::after, .option-btn::after, #calcular::after, #enviarWhatsApp::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: #FFD6D6;
+    transition: width 0.3s ease;
 }
-
-.option-btn.selected {
-    background: #161616;
-}
-
-/* Botão calcular */
-#calcular {
-    background: #710014;
-    color: #F2F1ED;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', serif;
-    letter-spacing: 0.5px;
-}
-
-#calcular:hover {
-    background: #161616;
-}
-
-/* Botão WhatsApp (mesmo tom de vermelho) */
-#enviarWhatsApp {
-    background: #710014; /* Mesmo vermelho dos outros */
-    color: #F2F1ED;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.5px;
-    padding: 12px;
-    border-radius: 5px;
+.size-btn:hover::after, .option-btn:hover::after, #calcular:hover::after, #enviarWhatsApp:hover::after {
     width: 100%;
 }
-
-#enviarWhatsApp:hover {
-    background: #161616; /* Mesmo hover dos outros */
+.size-btn:hover, .option-btn:hover, #calcular:hover, #enviarWhatsApp:hover {
+    background: #161616;
 }
 
+/* Botão selecionado */
+.size-btn.selected, .option-btn.selected {
+    background: #161616;
+}
+
+/* Botão WhatsApp com brilho suave */
+#enviarWhatsApp:hover {
+    box-shadow: 0 0 12px rgba(113,0,20,0.6);
+}
+
+/* ====== RESULTADO ====== */
 .resultado {
     margin-top: 15px;
     padding: 10px;
@@ -153,6 +174,7 @@ select, button {
     font-weight: bold;
     color: #161616;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 .aviso {
@@ -172,3 +194,4 @@ select, button {
 .aviso a:hover {
     text-decoration: underline;
 }
+
